@@ -8,6 +8,7 @@
 
 import UIKit
 
+var high_score = 0
 class ViewController: UIViewController {
 
     @IBAction func play_game(_ sender: Any) {
@@ -18,9 +19,24 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func high_scores(_ sender: Any) {
+        let high_scores = self.storyboard?.instantiateViewController(withIdentifier: "high_scores") as! HighScoresViewController
+        
+        self.present(high_scores, animated: true) {
+            print("High scores page shown.")
+        }
+    }
+    
+    override func viewDidLayoutSubviews() {
+        if let temp = UserDefaults.standard.object(forKey: "high_score") as? Int {
+            high_score = temp
+        }
+        
+        print(high_score)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {

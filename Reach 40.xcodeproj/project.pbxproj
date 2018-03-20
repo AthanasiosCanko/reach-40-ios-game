@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		26C615E22061ABEB00E3F55C /* SubmitScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C615E12061ABEB00E3F55C /* SubmitScoreViewController.swift */; };
+		26C615E42061B7D400E3F55C /* HighScoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C615E32061B7D400E3F55C /* HighScoresViewController.swift */; };
 		26EAC0EF206133F000128957 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EAC0EE206133F000128957 /* AppDelegate.swift */; };
 		26EAC0F1206133F000128957 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EAC0F0206133F000128957 /* ViewController.swift */; };
 		26EAC0F4206133F000128957 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26EAC0F2206133F000128957 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		26C615E12061ABEB00E3F55C /* SubmitScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitScoreViewController.swift; sourceTree = "<group>"; };
+		26C615E32061B7D400E3F55C /* HighScoresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HighScoresViewController.swift; path = "Reach 40/HighScoresViewController.swift"; sourceTree = "<group>"; };
 		26EAC0EB206133F000128957 /* Reach 40.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Reach 40.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		26EAC0EE206133F000128957 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26EAC0F0206133F000128957 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -42,6 +44,7 @@
 		26EAC0E2206133F000128957 = {
 			isa = PBXGroup;
 			children = (
+				26C615E32061B7D400E3F55C /* HighScoresViewController.swift */,
 				26EAC0ED206133F000128957 /* Reach 40 */,
 				26EAC0EC206133F000128957 /* Products */,
 			);
@@ -142,6 +145,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26C615E42061B7D400E3F55C /* HighScoresViewController.swift in Sources */,
 				26EAC0F1206133F000128957 /* ViewController.swift in Sources */,
 				26C615E22061ABEB00E3F55C /* SubmitScoreViewController.swift in Sources */,
 				26EAC0EF206133F000128957 /* AppDelegate.swift in Sources */,

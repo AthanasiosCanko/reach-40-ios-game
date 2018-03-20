@@ -14,6 +14,7 @@ class PlayGameViewController: UIViewController {
     var score = 0
     var nr_of_attempts = 0
     var nr = Int()
+    var submit_button_shown = false
     
     var arithmetic_char = ""
     var dice_timer = Timer()
@@ -22,6 +23,7 @@ class PlayGameViewController: UIViewController {
     @IBOutlet weak var dice_image: UIImageView!
     @IBOutlet weak var score_label: UILabel!
     @IBOutlet weak var arithmetic_label: UILabel!
+    @IBOutlet weak var submit_high_score_label: UIButton!
     
     @IBAction func tap(_ sender: Any) {
         if won == false {
@@ -81,6 +83,14 @@ class PlayGameViewController: UIViewController {
             self.dice_image.image = UIImage(named: "tap_to_throw.png")
             self.dice_image.transform = self.dice_image.transform.rotated(by: .pi)
             self.dice_image.transform = self.dice_image.transform.rotated(by: .pi)
+            
+            if self.submit_button_shown {
+                self.submit_button_shown = false
+                
+                self.submit_high_score_label.center = CGPoint(x: self.submit_high_score_label.center.x, y: self.submit_high_score_label.center.y + 700)
+            }
+            
+            
         }
     }
     
@@ -91,6 +101,12 @@ class PlayGameViewController: UIViewController {
                 self.arithmetic_label.textColor = UIColor(red: 0.6, green: 0.6, blue: 0, alpha: 1)
                 self.arithmetic_label.text = "Congrats, you won!"
                 self.won = true
+                
+                if self.nr_of_attempts < high_score || high_score == 0 {
+                    self.submit_high_score_label.center = CGPoint(x: self.submit_high_score_label.center.x, y: self.submit_high_score_label.center.y - 700)
+                    UserDefaults.standard.set(self.nr_of_attempts, forKey: "high_score")
+                    self.submit_button_shown = true
+                }
             }
             else {
                 if self.arithmetic_char == "+" {
@@ -109,7 +125,18 @@ class PlayGameViewController: UIViewController {
             self.attempts_label.text = "Nr. of attempts: \(self.nr_of_attempts)"
         }
     }
+    
+    @IBAction func submit_high_score(_ sender: Any) {
+        let submit_score = self.storyboard?.instantiateViewController(withIdentifier: "high_score") as! SubmitScoreViewController
+        self.present(submit_score, animated: true) {
+            print("Submit score page presented.")
+        }
+    }
 
+    override func viewDidLayoutSubviews() {
+        submit_high_score_label.center = CGPoint(x: submit_high_score_label.center.x, y: submit_high_score_label.center.y + 700)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

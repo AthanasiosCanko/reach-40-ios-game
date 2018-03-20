@@ -53,6 +53,9 @@
                                 <state key="normal" title="High Scores">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="high_scores:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fdo-zr-PvO"/>
+                                </connections>
                             </button>
                             <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rLk-xi-C6p">
                                 <rect key="frame" x="16" y="518" width="288" height="30"/>
@@ -123,6 +126,20 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="reach_40_background" translatesAutoresizingMaskIntoConstraints="NO" id="zDe-Qi-KQy">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
+                            <button opaque="NO" alpha="0.89999997615814209" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jJJ-mh-dK6">
+                                <rect key="frame" x="16" y="460" width="288" height="30"/>
+                                <color key="backgroundColor" red="0.53268522019999998" green="0.1313839406" blue="0.062828585510000007" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="aBU-MZ-uTW"/>
+                                </constraints>
+                                <state key="normal" title="Submit new high score">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="play_game:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oKz-rZ-bCa"/>
+                                    <action selector="submit_high_score:" destination="GfD-HB-eJW" eventType="touchUpInside" id="Zmg-Xb-CSv"/>
+                                </connections>
+                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tap_to_throw" translatesAutoresizingMaskIntoConstraints="NO" id="b7l-ux-LRO">
                                 <rect key="frame" x="60" y="184" width="200" height="200"/>
                                 <constraints>
@@ -199,13 +216,16 @@
                             <constraint firstItem="jOu-3E-XWQ" firstAttribute="leading" secondItem="FaY-Du-GMq" secondAttribute="leading" id="6qg-TJ-tq8"/>
                             <constraint firstItem="zDe-Qi-KQy" firstAttribute="leading" secondItem="FaY-Du-GMq" secondAttribute="leading" id="9VE-Jn-2EL"/>
                             <constraint firstItem="8nJ-wL-xuX" firstAttribute="leading" secondItem="FaY-Du-GMq" secondAttribute="leading" constant="16" id="Cih-nm-UPV"/>
+                            <constraint firstItem="FaY-Du-GMq" firstAttribute="trailing" secondItem="jJJ-mh-dK6" secondAttribute="trailing" constant="16" id="FJR-N6-qtz"/>
                             <constraint firstItem="FaY-Du-GMq" firstAttribute="trailing" secondItem="Uui-M3-KKJ" secondAttribute="trailing" constant="16" id="IY3-Mg-6hX"/>
                             <constraint firstItem="zDe-Qi-KQy" firstAttribute="bottom" secondItem="FaY-Du-GMq" secondAttribute="bottom" id="Kgo-EE-5Mx"/>
                             <constraint firstItem="zDe-Qi-KQy" firstAttribute="trailing" secondItem="FaY-Du-GMq" secondAttribute="trailing" id="Mzt-nF-l5V"/>
                             <constraint firstItem="FaY-Du-GMq" firstAttribute="trailing" secondItem="8nJ-wL-xuX" secondAttribute="trailing" constant="16" id="OiF-Yo-qgH"/>
                             <constraint firstItem="Uui-M3-KKJ" firstAttribute="leading" secondItem="FaY-Du-GMq" secondAttribute="leading" constant="16" id="Rm1-3e-4yt"/>
+                            <constraint firstItem="jOu-3E-XWQ" firstAttribute="top" secondItem="jJJ-mh-dK6" secondAttribute="bottom" constant="34" id="S98-k4-jdj"/>
                             <constraint firstItem="FaY-Du-GMq" firstAttribute="trailing" secondItem="aIo-mo-haE" secondAttribute="trailing" constant="16" id="WcG-gM-GuB"/>
                             <constraint firstItem="EQu-bw-yxS" firstAttribute="centerX" secondItem="fKh-ri-T8K" secondAttribute="centerX" id="aPW-mF-ysy"/>
+                            <constraint firstItem="jJJ-mh-dK6" firstAttribute="leading" secondItem="FaY-Du-GMq" secondAttribute="leading" constant="16" id="bFy-oi-FZu"/>
                             <constraint firstItem="b7l-ux-LRO" firstAttribute="centerY" secondItem="fKh-ri-T8K" secondAttribute="centerY" id="cyV-Jw-v6K"/>
                             <constraint firstItem="EQu-bw-yxS" firstAttribute="centerY" secondItem="fKh-ri-T8K" secondAttribute="centerY" id="e2y-gJ-zhi"/>
                             <constraint firstItem="8nJ-wL-xuX" firstAttribute="top" secondItem="b7l-ux-LRO" secondAttribute="bottom" constant="8" id="ftm-aE-4H9"/>
@@ -221,16 +241,80 @@
                         <outlet property="attempts_label" destination="Uui-M3-KKJ" id="5M5-vX-cqL"/>
                         <outlet property="dice_image" destination="b7l-ux-LRO" id="EYb-Va-gGt"/>
                         <outlet property="score_label" destination="aIo-mo-haE" id="ud1-MM-cGo"/>
+                        <outlet property="submit_high_score_label" destination="jJJ-mh-dK6" id="6EI-Vy-ugN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2EQ-3Q-9KA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="821" y="30"/>
         </scene>
+        <!--High Scores View Controller-->
+        <scene sceneID="hPe-qh-oBv">
+            <objects>
+                <viewController storyboardIdentifier="high_scores" id="d2z-hV-4ga" customClass="HighScoresViewController" customModule="Reach_40" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Xud-a8-aBl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="reach_40_background" translatesAutoresizingMaskIntoConstraints="NO" id="yTd-Yw-Y0Q">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" alpha="0.89999997615814209" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wLN-Iw-hHG">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <items>
+                                    <barButtonItem title="&lt; Back" id="JO2-f5-s2m">
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="back:" destination="d2z-hV-4ga" id="6rk-PF-v8k"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="TgI-Zn-xmR"/>
+                                </items>
+                                <color key="barTintColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                            </toolbar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="High Scores" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DBO-VI-sUv">
+                                <rect key="frame" x="16" y="20" width="288" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yw8-04-ewG">
+                                <rect key="frame" x="141" y="115" width="39" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Reset">
+                                    <color key="titleColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="reset_high_score:" destination="d2z-hV-4ga" eventType="touchUpInside" id="sVD-JM-Tbk"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="etY-2K-LMR">
+                                <rect key="frame" x="16" y="78" width="288" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="8Ia-Vd-O9a"/>
+                    </view>
+                    <connections>
+                        <outlet property="high_score_outlet" destination="etY-2K-LMR" id="KCe-UU-dNR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="foj-YJ-sgY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="819" y="737"/>
+        </scene>
         <!--Submit Score View Controller-->
         <scene sceneID="uHo-dK-gog">
             <objects>
-                <viewController id="Cnn-7N-WnL" customClass="SubmitScoreViewController" customModule="Reach_40" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="high_score" id="Cnn-7N-WnL" customClass="SubmitScoreViewController" customModule="Reach_40" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="V0E-Hy-N0r">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -239,17 +323,15 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" alpha="0.89999997615814209" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dAo-AW-Tce">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" alpha="0.89999997615814209" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dAo-AW-Tce">
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="OOt-Tc-qiK"/>
-                                </constraints>
                                 <items>
                                     <barButtonItem title="&lt; Back" id="ajR-LP-Chn">
                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
-                                            <action selector="back:" destination="GfD-HB-eJW" id="qlg-G0-S3F"/>
+                                            <action selector="back:" destination="Cnn-7N-WnL" id="0Cb-fx-TQ6"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="mzR-gs-ciZ"/>

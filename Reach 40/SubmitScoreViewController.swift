@@ -19,10 +19,16 @@ class SubmitScoreViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textfield.resignFirstResponder()
+        textField.resignFirstResponder()
         return true
     }
-
+    
+    @IBAction func back(_ sender: Any) {
+        self.dismiss(animated: true) {
+            print("High score page dismissed.")
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
