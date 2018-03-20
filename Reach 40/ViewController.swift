@@ -19,11 +19,26 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func rules(_ sender: Any) {
+        let rules = self.storyboard?.instantiateViewController(withIdentifier: "rules") as! RulesViewController
+        
+        self.present(rules, animated: true) {
+            print("Rules page shown.")
+        }
+    }
+    
     @IBAction func high_scores(_ sender: Any) {
         let high_scores = self.storyboard?.instantiateViewController(withIdentifier: "high_scores") as! HighScoresViewController
         
         self.present(high_scores, animated: true) {
             print("High scores page shown.")
+        }
+    }
+    
+    @IBAction func about(_ sender: Any) {
+        let about = self.storyboard?.instantiateViewController(withIdentifier: "about") as! AboutViewController
+        self.present(about, animated: true) {
+            print("About shown.")
         }
     }
     
