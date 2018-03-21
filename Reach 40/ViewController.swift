@@ -23,7 +23,7 @@ class ViewController: UIViewController {
         let rules = self.storyboard?.instantiateViewController(withIdentifier: "rules") as! RulesViewController
         
         self.present(rules, animated: true) {
-            print("Rules page shown.")
+            print("'Rules' view shown.")
         }
     }
     
@@ -31,14 +31,14 @@ class ViewController: UIViewController {
         let high_scores = self.storyboard?.instantiateViewController(withIdentifier: "high_scores") as! HighScoresViewController
         
         self.present(high_scores, animated: true) {
-            print("High scores page shown.")
+            print("'High Scores' view shown.")
         }
     }
     
     @IBAction func about(_ sender: Any) {
         let about = self.storyboard?.instantiateViewController(withIdentifier: "about") as! AboutViewController
         self.present(about, animated: true) {
-            print("About shown.")
+            print("'About' shown.")
         }
     }
     
@@ -46,8 +46,6 @@ class ViewController: UIViewController {
         if let temp = UserDefaults.standard.object(forKey: "high_score") as? Int {
             high_score = temp
         }
-        
-        print(high_score)
     }
     
     override func viewDidLoad() {
@@ -56,9 +54,5 @@ class ViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
-
 }
-

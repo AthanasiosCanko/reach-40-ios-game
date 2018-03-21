@@ -58,7 +58,7 @@ class PlayGameViewController: UIViewController {
     
     @IBAction func back(_ sender: Any) {
         self.dismiss(animated: true, completion: {
-            print("Back to menu.")
+            print("'Play Game' view dismissed.")
         })
     }
     
@@ -121,7 +121,7 @@ class PlayGameViewController: UIViewController {
     @IBAction func submit_high_score(_ sender: Any) {
         let submit_score = self.storyboard?.instantiateViewController(withIdentifier: "high_score") as! SubmitScoreViewController
         self.present(submit_score, animated: true) {
-            print("Submit score page presented.")
+            print("'Submit Score' view shown.")
         }
     }
     

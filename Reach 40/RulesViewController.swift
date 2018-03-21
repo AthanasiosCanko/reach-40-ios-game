@@ -12,7 +12,7 @@ class RulesViewController: UIViewController {
     
     @IBAction func back(_ sender: Any) {
         self.dismiss(animated: true) {
-            print("Rules dismissed.")
+            print("'Rules' view dismissed.")
         }
     }
 

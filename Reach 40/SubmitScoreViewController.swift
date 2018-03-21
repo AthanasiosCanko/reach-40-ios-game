@@ -21,9 +21,6 @@ class SubmitScoreViewController: UIViewController, UITextFieldDelegate {
         else {
             var message = ""
             let high_score = UserDefaults.standard.object(forKey: "high_score")
-            print(username)
-            print(high_score!)
-            // add json text
             
             if username[0] != "" {
                 if let url = URL(string: "http://reach-40.herokuapp.com/\(username[0])/\(high_score!)") {
@@ -46,7 +43,7 @@ class SubmitScoreViewController: UIViewController, UITextFieldDelegate {
                                     }
                                 }
                                 catch {
-                                    message = "DO/Catch Swift failed. Please try later."
+                                    message = "Do/Catch Swift failed. Please try later."
                                 }
                                 
                                 DispatchQueue.main.sync {
@@ -78,7 +75,7 @@ class SubmitScoreViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func back(_ sender: Any) {
         self.dismiss(animated: true) {
-            print("High score page dismissed.")
+            print("'Submit Score' view dismissed.")
         }
     }
     
