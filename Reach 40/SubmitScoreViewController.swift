@@ -22,6 +22,8 @@ class SubmitScoreViewController: UIViewController, UITextFieldDelegate {
             var message = ""
             let high_score = UserDefaults.standard.object(forKey: "high_score")
             
+            output.text = "Attempting to submit, please wait..."
+            
             if username[0] != "" {
                 if let url = URL(string: "http://reach-40.herokuapp.com/\(username[0])/\(high_score!)") {
                     let task = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
