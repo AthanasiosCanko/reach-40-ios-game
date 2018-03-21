@@ -83,7 +83,7 @@
                                 <color key="textColor" red="0.53268522024154663" green="0.13138394057750702" blue="0.062828585505485535" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="reach_40_logo" translatesAutoresizingMaskIntoConstraints="NO" id="y8p-tW-x1o">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="reach_40_image_360px" translatesAutoresizingMaskIntoConstraints="NO" id="y8p-tW-x1o">
                                 <rect key="frame" x="70" y="76" width="180" height="180"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="180" id="Jxc-fm-nN4"/>
@@ -699,7 +699,7 @@ Based in Tirana, Albania.
         <image name="5_dice" width="1000" height="1000"/>
         <image name="6_dice" width="1000" height="1000"/>
         <image name="reach_40_background" width="2000" height="2000"/>
-        <image name="reach_40_logo" width="1000" height="1000"/>
+        <image name="reach_40_image_360px" width="360" height="360"/>
         <image name="tap_to_throw" width="1000" height="1000"/>
     </resources>
 </document>
