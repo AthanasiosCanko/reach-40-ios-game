@@ -17,7 +17,7 @@ class HighScoresViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
-        cell.textLabel?.text = "\(high_score_arr["name"]![indexPath.row]): \(high_score_arr["score"]![indexPath.row]) attempts"
+        cell.textLabel?.text = "\(indexPath.row) - \(high_score_arr["name"]![indexPath.row]): \(high_score_arr["score"]![indexPath.row]) attempts"
         return cell
     }
     
@@ -39,6 +39,7 @@ class HighScoresViewController: UIViewController, UITableViewDelegate, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        high_score_arr = ["name": [String](), "score": [String]()]
         high_score_outlet.text = "My high score: \(high_score)"
         json_fetch_outlet.text = "Please waiting, we are fetching data..."
         

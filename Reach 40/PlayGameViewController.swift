@@ -15,9 +15,7 @@ class PlayGameViewController: UIViewController {
     var nr_of_attempts = 0
     var nr = Int()
     var submit_button_shown = false
-    
     var arithmetic_char = ""
-    var dice_timer = Timer()
     
     @IBOutlet weak var attempts_label: UILabel!
     @IBOutlet weak var dice_image: UIImageView!
@@ -33,7 +31,7 @@ class PlayGameViewController: UIViewController {
             dice_image.image = UIImage(named: "\(nr)_dice.png")
             attempts_label.text = "Nr. of attempts: \(nr_of_attempts)"
             
-            if nr % 2 != 0 {
+            if nr % 2 == 0 {
                 if score - nr >= 0 {
                     score -= nr
                 }
@@ -74,7 +72,6 @@ class PlayGameViewController: UIViewController {
         arithmetic_label.text = ""
         
         UIView.animate(withDuration: 0.5) {
-            // <<<<< TO FIX >>>>>
             self.dice_image.image = UIImage(named: "tap_to_throw.png")
             self.dice_image.transform = self.dice_image.transform.rotated(by: .pi)
             self.dice_image.transform = self.dice_image.transform.rotated(by: .pi)
