@@ -21,12 +21,14 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="reach_40_background" translatesAutoresizingMaskIntoConstraints="NO" id="hLv-IR-9ze">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Developed by Athanasios Canko. All rights reserved, 2018 (c)." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o4W-Xr-g3n">
-                                <rect key="frame" x="0.0" y="543" width="320" height="25"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o4W-Xr-g3n">
+                                <rect key="frame" x="0.0" y="528" width="320" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="kXh-sE-uL5"/>
+                                    <constraint firstAttribute="height" constant="40" id="xu3-B3-EV4"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                <string key="text">Developed by Athanasios Canko. 
+All rights reserved, 2018 ©.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <color key="textColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -41,12 +43,12 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="hLv-IR-9ze" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="KEm-fj-2dg"/>
-                            <constraint firstItem="o4W-Xr-g3n" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Low-aA-hF3"/>
                             <constraint firstItem="hLv-IR-9ze" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="QIF-KR-K35"/>
-                            <constraint firstItem="o4W-Xr-g3n" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="QYV-Bh-oAK"/>
                             <constraint firstItem="DMO-aE-nR3" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="R3f-7A-JtP"/>
+                            <constraint firstItem="o4W-Xr-g3n" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="RD6-y7-bJb"/>
+                            <constraint firstItem="o4W-Xr-g3n" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bqY-E8-ihu"/>
                             <constraint firstItem="hLv-IR-9ze" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="bsP-dz-AIn"/>
-                            <constraint firstItem="o4W-Xr-g3n" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="nUx-pP-jRP"/>
+                            <constraint firstItem="o4W-Xr-g3n" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="idF-ky-Pf8"/>
                             <constraint firstItem="hLv-IR-9ze" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="vKl-hL-3i1"/>
                             <constraint firstItem="DMO-aE-nR3" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="w0b-Qo-mZG"/>
                         </constraints>

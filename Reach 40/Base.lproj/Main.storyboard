@@ -425,7 +425,7 @@ Theoretically, the game can be won in 8 throws (getting 8 fives in a row). Howev
                                 </constraints>
                                 <string key="text">Developed by Athanasios Canko.
 Based in Tirana, Albania. 
-(c) All rights reserved, 2018.</string>
+All rights reserved, 2018 ©.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
