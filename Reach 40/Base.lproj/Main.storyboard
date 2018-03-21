@@ -335,11 +335,11 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Jg-AK-1cC">
                                 <rect key="frame" x="16" y="254" width="288" height="270"/>
-                                <mutableString key="text">Everytime you throw the dice, you get a score between 1-6.   Odd numbers add points, even numbers subtract. 
+                                <string key="text">Everytime you throw the dice, you get a score between 1-6.   Odd numbers add points, even numbers subtract. 
 
 The goal is to reach 40 points in the least amount of dice throws.
 
-Theoretically, the game can be won in 8 throws (getting 8 fives in a row). However, the odds of that happening are 1/1,679,616. Or 0,0000005%. Good luck!</mutableString>
+Theoretically, the game can be won in 8 throws (getting 8 fives in a row). However, the odds of that happening are 1/1,679,616. Or 0,0000005%. Good luck!</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -591,6 +591,15 @@ Theoretically, the game can be won in 8 throws (getting 8 fives in a row). Howev
                                     <action selector="submit:" destination="Cnn-7N-WnL" eventType="touchUpInside" id="QzK-am-0AF"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bBf-Av-QmD">
+                                <rect key="frame" x="16" y="249" width="288" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="TZx-vs-6IC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -599,6 +608,7 @@ Theoretically, the game can be won in 8 throws (getting 8 fives in a row). Howev
                             <constraint firstItem="dAo-AW-Tce" firstAttribute="trailing" secondItem="wyd-zb-HeV" secondAttribute="trailing" id="5k4-uE-TWi"/>
                             <constraint firstItem="rXe-PS-n91" firstAttribute="leading" secondItem="wyd-zb-HeV" secondAttribute="leading" constant="16" id="60N-BW-6kK"/>
                             <constraint firstItem="dAo-AW-Tce" firstAttribute="leading" secondItem="wyd-zb-HeV" secondAttribute="leading" id="6py-fe-IeK"/>
+                            <constraint firstItem="bBf-Av-QmD" firstAttribute="centerX" secondItem="V0E-Hy-N0r" secondAttribute="centerX" id="AhL-hm-cRg"/>
                             <constraint firstItem="dAo-AW-Tce" firstAttribute="trailing" secondItem="wyd-zb-HeV" secondAttribute="trailing" id="LiZ-fN-Sfq"/>
                             <constraint firstItem="bmY-RY-8v3" firstAttribute="top" secondItem="V0E-Hy-N0r" secondAttribute="top" id="TN6-nL-WEt"/>
                             <constraint firstItem="bmY-RY-8v3" firstAttribute="bottom" secondItem="wyd-zb-HeV" secondAttribute="bottom" id="Vkc-Tt-YgL"/>
@@ -607,16 +617,20 @@ Theoretically, the game can be won in 8 throws (getting 8 fives in a row). Howev
                             <constraint firstItem="Yro-oV-CcO" firstAttribute="top" secondItem="wyd-zb-HeV" secondAttribute="top" id="Z1e-n5-vYr"/>
                             <constraint firstItem="wyd-zb-HeV" firstAttribute="trailing" secondItem="rXe-PS-n91" secondAttribute="trailing" constant="16" id="cWg-15-p1M"/>
                             <constraint firstItem="pv5-UH-iWb" firstAttribute="leading" secondItem="wyd-zb-HeV" secondAttribute="leading" constant="16" id="eby-4v-3pJ"/>
+                            <constraint firstItem="bBf-Av-QmD" firstAttribute="leading" secondItem="wyd-zb-HeV" secondAttribute="leading" constant="16" id="el5-6p-oV7"/>
                             <constraint firstItem="rXe-PS-n91" firstAttribute="top" secondItem="Yro-oV-CcO" secondAttribute="bottom" constant="8" id="kKy-dl-Gsm"/>
                             <constraint firstItem="dAo-AW-Tce" firstAttribute="bottom" secondItem="wyd-zb-HeV" secondAttribute="bottom" id="lEg-XV-GSc"/>
                             <constraint firstItem="bmY-RY-8v3" firstAttribute="leading" secondItem="wyd-zb-HeV" secondAttribute="leading" id="nR8-b8-7fa"/>
                             <constraint firstItem="pv5-UH-iWb" firstAttribute="top" secondItem="rXe-PS-n91" secondAttribute="bottom" constant="8" id="onv-v9-VZ9"/>
+                            <constraint firstItem="wyd-zb-HeV" firstAttribute="trailing" secondItem="bBf-Av-QmD" secondAttribute="trailing" constant="16" id="uGD-IQ-gbW"/>
+                            <constraint firstItem="bBf-Av-QmD" firstAttribute="centerY" secondItem="V0E-Hy-N0r" secondAttribute="centerY" id="uYT-Dh-El6"/>
                             <constraint firstItem="wyd-zb-HeV" firstAttribute="trailing" secondItem="Yro-oV-CcO" secondAttribute="trailing" constant="16" id="yuP-yD-VWv"/>
                             <constraint firstItem="dAo-AW-Tce" firstAttribute="leading" secondItem="wyd-zb-HeV" secondAttribute="leading" id="zmK-jT-2oF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wyd-zb-HeV"/>
                     </view>
                     <connections>
+                        <outlet property="output" destination="bBf-Av-QmD" id="bte-FL-Et1"/>
                         <outlet property="textField" destination="rXe-PS-n91" id="gIQ-aR-5be"/>
                     </connections>
                 </viewController>

@@ -27,35 +27,31 @@ class PlayGameViewController: UIViewController {
     
     @IBAction func tap(_ sender: Any) {
         if won == false {
-            UIView.animate(withDuration: 0.2) {
-                
-                self.dice_image.alpha = 0
-                self.nr_of_attempts += 1
-                
-                self.nr = Int(arc4random_uniform(6)) + 1
-                
-                if self.nr % 2 == 0 {
-                    if self.score - self.nr >= 0 {
-                        self.score -= self.nr
-                    }
-                    else {
-                        self.score = 0
-                    }
-                    
-                    self.arithmetic_char = "-"
+            nr_of_attempts += 1
+            nr = Int(arc4random_uniform(6)) + 1
+            
+            dice_image.image = UIImage(named: "\(nr)_dice.png")
+            attempts_label.text = "Nr. of attempts: \(nr_of_attempts)"
+            
+            if nr % 2 != 0 {
+                if score - nr >= 0 {
+                    score -= nr
                 }
                 else {
-                    self.score += self.nr
-                    self.arithmetic_char = "+"
+                    score = 0
                 }
                 
-                if self.score >= 40 {
-                    self.won = true
-                }
-                
-                print(self.score)
-                
-                self.dice_timer = Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(PlayGameViewController.dice_appear), userInfo: nil, repeats: false)
+                arithmetic_char = "-"
+            }
+            else {
+                score += self.nr
+                arithmetic_char = "+"
+            }
+            
+            dice_appear()
+            
+            if score >= 40 {
+                won = true
             }
         }
     }
@@ -79,50 +75,46 @@ class PlayGameViewController: UIViewController {
         
         UIView.animate(withDuration: 0.5) {
             // <<<<< TO FIX >>>>>
- 
             self.dice_image.image = UIImage(named: "tap_to_throw.png")
             self.dice_image.transform = self.dice_image.transform.rotated(by: .pi)
             self.dice_image.transform = self.dice_image.transform.rotated(by: .pi)
+        }
+        
+        if self.submit_button_shown {
+            self.submit_button_shown = false
             
-            if self.submit_button_shown {
-                self.submit_button_shown = false
-                
+            UIView.animate(withDuration: 0.5, animations: {
                 self.submit_high_score_label.center = CGPoint(x: self.submit_high_score_label.center.x, y: self.submit_high_score_label.center.y + 700)
-            }
-            
-            
+            })
         }
     }
     
-    @objc func dice_appear() {
-        UIView.animate(withDuration: 0.2) {
-            self.score_label.text = "Score: \(self.score)"
-            if self.score >= 40 {
-                self.arithmetic_label.textColor = UIColor(red: 0.6, green: 0.6, blue: 0, alpha: 1)
-                self.arithmetic_label.text = "Congrats, you won!"
-                self.won = true
-                
-                if self.nr_of_attempts < high_score || high_score == 0 {
+    func dice_appear() {
+        score_label.text = "Score: \(score)"
+        
+        if score >= 40 {
+            arithmetic_label.textColor = UIColor(red: 0.6, green: 0.6, blue: 0, alpha: 1)
+            arithmetic_label.text = "Congrats, you won!"
+            won = true
+            
+            if (nr_of_attempts < high_score || high_score == 0) {
+                UserDefaults.standard.set(nr_of_attempts, forKey: "high_score")
+                submit_button_shown = true
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.view.layoutIfNeeded()
                     self.submit_high_score_label.center = CGPoint(x: self.submit_high_score_label.center.x, y: self.submit_high_score_label.center.y - 700)
-                    UserDefaults.standard.set(self.nr_of_attempts, forKey: "high_score")
-                    self.submit_button_shown = true
-                }
+                })
+            }
+        }
+        else {
+            if arithmetic_char == "+" {
+                arithmetic_label.textColor = UIColor(red: 0, green: 0.5, blue: 0, alpha: 1)
             }
             else {
-                if self.arithmetic_char == "+" {
-                    self.arithmetic_label.textColor = UIColor(red: 0, green: 0.5, blue: 0, alpha: 1)
-                }
-                else {
-                    self.arithmetic_label.textColor = UIColor(red: 0.5, green: 0, blue: 0, alpha: 1)
-                }
-                
-                self.arithmetic_label.text = "\(self.arithmetic_char)\(self.nr)"
+                arithmetic_label.textColor = UIColor(red: 0.5, green: 0, blue: 0, alpha: 1)
             }
             
-            self.dice_image.image = UIImage(named: "\(self.nr)_dice.png")
-            self.dice_image.alpha = 1
-            
-            self.attempts_label.text = "Nr. of attempts: \(self.nr_of_attempts)"
+            arithmetic_label.text = "\(arithmetic_char)\(nr)"
         }
     }
     
@@ -132,7 +124,7 @@ class PlayGameViewController: UIViewController {
             print("Submit score page presented.")
         }
     }
-
+    
     override func viewDidLayoutSubviews() {
         submit_high_score_label.center = CGPoint(x: submit_high_score_label.center.x, y: submit_high_score_label.center.y + 700)
     }
