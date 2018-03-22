@@ -154,6 +154,15 @@
                                 <color key="textColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8nJ-wL-xuX">
+                                <rect key="frame" x="16" y="392" width="288" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="14s-c9-5YZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jOu-3E-XWQ">
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -186,20 +195,6 @@
                                 <color key="textColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" alpha="0.89999997615814209" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jJJ-mh-dK6">
-                                <rect key="frame" x="35" y="463" width="250" height="35"/>
-                                <color key="backgroundColor" red="0.53268522019999998" green="0.1313839406" blue="0.062828585510000007" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="XUe-pZ-xFS"/>
-                                </constraints>
-                                <state key="normal" title="Submit new high score">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="play_game:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oKz-rZ-bCa"/>
-                                    <action selector="submit_high_score:" destination="GfD-HB-eJW" eventType="touchUpInside" id="Zmg-Xb-CSv"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EQu-bw-yxS">
                                 <rect key="frame" x="60" y="184" width="200" height="200"/>
                                 <constraints>
@@ -210,39 +205,44 @@
                                     <action selector="tap:" destination="GfD-HB-eJW" eventType="touchUpInside" id="aeu-kr-mr7"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8nJ-wL-xuX">
-                                <rect key="frame" x="16" y="392" width="288" height="50"/>
+                            <button opaque="NO" alpha="0.89999997615814209" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jJJ-mh-dK6">
+                                <rect key="frame" x="35" y="463" width="250" height="40"/>
+                                <color key="backgroundColor" red="0.53268522019999998" green="0.1313839406" blue="0.062828585510000007" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="gpL-x6-cJ8"/>
+                                    <constraint firstAttribute="height" constant="40" id="WBL-wK-1Lt"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <state key="normal" title="Submit new high score">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="play_game:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oKz-rZ-bCa"/>
+                                    <action selector="submit_high_score:" destination="GfD-HB-eJW" eventType="touchUpInside" id="Zmg-Xb-CSv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="FaY-Du-GMq" firstAttribute="trailing" secondItem="jJJ-mh-dK6" secondAttribute="trailing" constant="35" id="2HJ-UW-aNN"/>
                             <constraint firstItem="aIo-mo-haE" firstAttribute="top" secondItem="FaY-Du-GMq" secondAttribute="top" id="37z-9R-ksg"/>
                             <constraint firstItem="Uui-M3-KKJ" firstAttribute="top" secondItem="aIo-mo-haE" secondAttribute="bottom" constant="8" id="3se-R8-Ifr"/>
                             <constraint firstItem="jOu-3E-XWQ" firstAttribute="trailing" secondItem="FaY-Du-GMq" secondAttribute="trailing" id="498-Ef-HjA"/>
                             <constraint firstItem="jOu-3E-XWQ" firstAttribute="leading" secondItem="FaY-Du-GMq" secondAttribute="leading" id="6qg-TJ-tq8"/>
                             <constraint firstItem="zDe-Qi-KQy" firstAttribute="leading" secondItem="FaY-Du-GMq" secondAttribute="leading" id="9VE-Jn-2EL"/>
-                            <constraint firstItem="jJJ-mh-dK6" firstAttribute="leading" secondItem="FaY-Du-GMq" secondAttribute="leading" constant="35" id="DIg-gj-l3L"/>
                             <constraint firstItem="FaY-Du-GMq" firstAttribute="trailing" secondItem="Uui-M3-KKJ" secondAttribute="trailing" constant="16" id="IY3-Mg-6hX"/>
+                            <constraint firstItem="jOu-3E-XWQ" firstAttribute="top" secondItem="jJJ-mh-dK6" secondAttribute="bottom" constant="21" id="JSx-FB-MZq"/>
                             <constraint firstItem="zDe-Qi-KQy" firstAttribute="bottom" secondItem="FaY-Du-GMq" secondAttribute="bottom" id="Kgo-EE-5Mx"/>
                             <constraint firstItem="zDe-Qi-KQy" firstAttribute="trailing" secondItem="FaY-Du-GMq" secondAttribute="trailing" id="Mzt-nF-l5V"/>
                             <constraint firstItem="EQu-bw-yxS" firstAttribute="centerY" secondItem="fKh-ri-T8K" secondAttribute="centerY" id="NQO-i3-Ucp"/>
+                            <constraint firstItem="FaY-Du-GMq" firstAttribute="trailing" secondItem="8nJ-wL-xuX" secondAttribute="trailing" constant="16" id="R3G-yl-X2j"/>
                             <constraint firstItem="Uui-M3-KKJ" firstAttribute="leading" secondItem="FaY-Du-GMq" secondAttribute="leading" constant="16" id="Rm1-3e-4yt"/>
                             <constraint firstItem="EQu-bw-yxS" firstAttribute="centerX" secondItem="fKh-ri-T8K" secondAttribute="centerX" id="SbJ-F2-pSZ"/>
+                            <constraint firstItem="8nJ-wL-xuX" firstAttribute="leading" secondItem="FaY-Du-GMq" secondAttribute="leading" constant="16" id="V5c-JL-MXV"/>
                             <constraint firstItem="FaY-Du-GMq" firstAttribute="trailing" secondItem="aIo-mo-haE" secondAttribute="trailing" constant="16" id="WcG-gM-GuB"/>
-                            <constraint firstItem="8nJ-wL-xuX" firstAttribute="leading" secondItem="FaY-Du-GMq" secondAttribute="leading" constant="16" id="Xhg-i5-Gh9"/>
-                            <constraint firstItem="jJJ-mh-dK6" firstAttribute="top" secondItem="8nJ-wL-xuX" secondAttribute="bottom" constant="21" id="e2Q-pH-IFl"/>
-                            <constraint firstItem="FaY-Du-GMq" firstAttribute="trailing" secondItem="8nJ-wL-xuX" secondAttribute="trailing" constant="16" id="hdd-Gu-vIn"/>
+                            <constraint firstItem="jJJ-mh-dK6" firstAttribute="leading" secondItem="FaY-Du-GMq" secondAttribute="leading" constant="35" id="ZF8-MV-BDu"/>
+                            <constraint firstItem="jJJ-mh-dK6" firstAttribute="top" secondItem="8nJ-wL-xuX" secondAttribute="bottom" constant="21" id="fxe-Yq-fl4"/>
                             <constraint firstItem="jOu-3E-XWQ" firstAttribute="bottom" secondItem="FaY-Du-GMq" secondAttribute="bottom" id="iDL-TL-pBt"/>
                             <constraint firstItem="aIo-mo-haE" firstAttribute="leading" secondItem="FaY-Du-GMq" secondAttribute="leading" constant="16" id="kJT-L7-9GH"/>
                             <constraint firstItem="zDe-Qi-KQy" firstAttribute="top" secondItem="fKh-ri-T8K" secondAttribute="top" id="rW0-Nv-dWc"/>
-                            <constraint firstItem="jOu-3E-XWQ" firstAttribute="top" secondItem="jJJ-mh-dK6" secondAttribute="bottom" constant="26" id="zPf-Nj-tD1"/>
+                            <constraint firstItem="FaY-Du-GMq" firstAttribute="trailing" secondItem="jJJ-mh-dK6" secondAttribute="trailing" constant="35" id="wch-DJ-Fad"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FaY-Du-GMq"/>
                     </view>

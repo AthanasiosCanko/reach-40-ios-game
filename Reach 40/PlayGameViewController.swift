@@ -55,7 +55,7 @@ class PlayGameViewController: UIViewController {
             
             change_image_timer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(PlayGameViewController.change_image), userInfo: nil, repeats: false)
             
-            if nr % 2 != 0 {
+            if nr % 2 == 0 {
                 if score - nr >= 0 {score -= nr}
                 else {score = 0}
                 
