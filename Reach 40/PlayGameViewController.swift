@@ -55,7 +55,7 @@ class PlayGameViewController: UIViewController {
             
             change_image_timer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(PlayGameViewController.change_image), userInfo: nil, repeats: false)
             
-            if nr % 2 == 0 {
+            if nr % 2 != 0 {
                 if score - nr >= 0 {score -= nr}
                 else {score = 0}
                 
@@ -66,7 +66,39 @@ class PlayGameViewController: UIViewController {
                 arithmetic_char = "+"
             }
             
-            dice_appear()
+            score_label.text = "Score: \(score)"
+            
+            UIView.animate(withDuration: 0.1) {
+                self.dice_image.alpha = 1
+            }
+            
+            if score >= 40 {
+                arithmetic_label.textColor = UIColor(red: 0.6, green: 0.5, blue: 0, alpha: 1)
+                arithmetic_label.text = "Congrats, you won!"
+                won = true
+                
+                UIView.animate(withDuration: 0.3, animations: {
+                    self.dice_image.frame = CGRect(x: self.view.center.x, y: self.view.center.y, width: 0, height: 0)
+                })
+                
+                star_timer = Timer.scheduledTimer(timeInterval: 0.3, target: self, selector: #selector(PlayGameViewController.star_image), userInfo: nil, repeats: false)
+                
+                if (nr_of_attempts < high_score || high_score == 0) {
+                    UserDefaults.standard.set(nr_of_attempts, forKey: "high_score")
+                    submit_button_shown = true
+                    UIView.animate(withDuration: 0.5, animations: {
+                        self.view.layoutIfNeeded()
+                        self.submit_high_score_label.alpha = 1
+                    })
+                }
+            }
+            else {
+                
+                if arithmetic_char == "+" {arithmetic_label.textColor = UIColor(red: 0, green: 0.5, blue: 0, alpha: 1)}
+                else {arithmetic_label.textColor = UIColor(red: 0.5, green: 0, blue: 0, alpha: 1)}
+                
+                arithmetic_label.text = "\(arithmetic_char)\(nr)"
+            }
         }
     }
     
@@ -100,42 +132,6 @@ class PlayGameViewController: UIViewController {
             UIView.animate(withDuration: 0.5, animations: {
                 self.submit_high_score_label.alpha = 0
             })
-        }
-    }
-    
-    func dice_appear() {
-        score_label.text = "Score: \(score)"
-        
-        UIView.animate(withDuration: 0.1) {
-            self.dice_image.alpha = 1
-        }
-        
-        if score >= 40 {
-            arithmetic_label.textColor = UIColor(red: 0.6, green: 0.5, blue: 0, alpha: 1)
-            arithmetic_label.text = "Congrats, you won!"
-            won = true
-            
-            UIView.animate(withDuration: 0.3, animations: {
-                self.dice_image.frame = CGRect(x: self.view.center.x, y: self.view.center.y, width: 0, height: 0)
-            })
-            
-            star_timer = Timer.scheduledTimer(timeInterval: 0.3, target: self, selector: #selector(PlayGameViewController.star_image), userInfo: nil, repeats: false)
-            
-            if (nr_of_attempts < high_score || high_score == 0) {
-                UserDefaults.standard.set(nr_of_attempts, forKey: "high_score")
-                submit_button_shown = true
-                UIView.animate(withDuration: 0.5, animations: {
-                    self.view.layoutIfNeeded()
-                    self.submit_high_score_label.alpha = 1
-                })
-            }
-        }
-        else {
-            
-            if arithmetic_char == "+" {arithmetic_label.textColor = UIColor(red: 0, green: 0.5, blue: 0, alpha: 1)}
-            else {arithmetic_label.textColor = UIColor(red: 0.5, green: 0, blue: 0, alpha: 1)}
-            
-            arithmetic_label.text = "\(arithmetic_char)\(nr)"
         }
     }
     
