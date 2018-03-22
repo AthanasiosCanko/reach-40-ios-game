@@ -10,7 +10,15 @@ import UIKit
 
 var high_score = 0
 class ViewController: UIViewController {
-
+    
+    @IBOutlet weak var play_game_outlet: UIButton!
+    @IBOutlet weak var rules_outlet: UIButton!
+    @IBOutlet weak var high_scores_outlet: UIButton!
+    @IBOutlet weak var about_outlet: UIButton!
+    
+    @IBOutlet weak var reach_40_image: UIImageView!
+    @IBOutlet weak var reach_40_label: UILabel!
+    
     @IBAction func play_game(_ sender: Any) {
         let play_game = self.storyboard?.instantiateViewController(withIdentifier: "play_game") as! PlayGameViewController
         
@@ -50,8 +58,37 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        animate_elements()
     }
-
+    
+    func animate_elements() {
+        play_game_outlet.alpha = 0
+        rules_outlet.alpha = 0
+        high_scores_outlet.alpha = 0
+        about_outlet.alpha = 0
+        
+        reach_40_image.alpha = 0
+        reach_40_label.alpha = 0
+        
+        UIView.animate(withDuration: 0.5) {
+            self.play_game_outlet.alpha = 1
+            self.reach_40_image.alpha = 1
+        }
+        
+        UIView.animate(withDuration: 0.8) {
+            self.rules_outlet.alpha = 1
+            self.reach_40_label.alpha = 1
+        }
+        
+        UIView.animate(withDuration: 1.1) {
+            self.high_scores_outlet.alpha = 1
+        }
+        
+        UIView.animate(withDuration: 1.4) {
+            self.about_outlet.alpha = 1
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

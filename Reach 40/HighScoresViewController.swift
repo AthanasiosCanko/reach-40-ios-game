@@ -37,8 +37,17 @@ class HighScoresViewController: UIViewController, UITableViewDelegate, UITableVi
         }
     }
     
+    override func viewDidLayoutSubviews() {
+        UIView.animate(withDuration: 1) {
+            self.high_score_outlet.alpha = 1
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        table.alpha = 0
+        high_score_outlet.alpha = 0
+        
         high_score_arr = ["name": [String](), "score": [String]()]
         high_score_outlet.text = "My high score: \(high_score)"
         json_fetch_outlet.text = "Please waiting, we are fetching data..."
@@ -75,8 +84,11 @@ class HighScoresViewController: UIViewController, UITableViewDelegate, UITableVi
                                 else {
                                     self.json_fetch_outlet.text = "JSON error, please try later."
                                 }
-                                
                                 self.table.reloadData()
+                                
+                                UIView.animate(withDuration: 0.5, animations: {
+                                    self.table.alpha = 1
+                                })
                             }
                         }
                         catch {

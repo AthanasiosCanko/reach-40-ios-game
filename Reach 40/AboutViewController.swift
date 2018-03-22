@@ -10,6 +10,8 @@ import UIKit
 
 class AboutViewController: UIViewController {
     
+    @IBOutlet weak var about_label: UILabel!
+    
     @IBAction func back(_ sender: Any) {
         self.dismiss(animated: true) {
             print("'About' view dismissed.")
@@ -18,6 +20,13 @@ class AboutViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        about_label.alpha = 0
+    }
+    
+    override func viewDidLayoutSubviews() {
+        UIView.animate(withDuration: 1) {
+            self.about_label.alpha = 1
+        }
     }
 
     override func didReceiveMemoryWarning() {
