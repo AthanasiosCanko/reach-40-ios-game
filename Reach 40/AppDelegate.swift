@@ -13,7 +13,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
@@ -40,7 +39,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
+    
+    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+        
+        if shortcutItem.type == "com.athanasios.Reach-40.playgame" {
+            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+            let play_game = storyBoard.instantiateViewController(withIdentifier: "play_game") as! PlayGameViewController
+            
+            window?.rootViewController?.dismiss(animated: true, completion: {
+                //
+            })
+            
+            window?.rootViewController?.present(play_game, animated: true) {
+                print("Game started.")
+            }
+        }
+        else if shortcutItem.type == "com.athanasios.Reach-40.highscores" {
+            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+            let high_scores = storyBoard.instantiateViewController(withIdentifier: "high_scores") as! HighScoresViewController
+            
+            window?.rootViewController?.dismiss(animated: true, completion: {
+                //
+            })
+            
+            window?.rootViewController?.present(high_scores, animated: true) {
+                print("'High Scores' view shown.")
+            }
+        }
+        
+        
+        
+    }
 
 }
 
