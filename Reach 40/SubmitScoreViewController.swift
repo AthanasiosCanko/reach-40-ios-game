@@ -25,8 +25,12 @@ class SubmitScoreViewController: UIViewController, UITextFieldDelegate {
             output.text = "Attempting to submit, please wait..."
             
             if username[0] != "" {
-                if let url = URL(string: "http://reach-40.herokuapp.com/\(username[0])/\(high_score!)") {
-                    let task = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
+                if let url = URL(string: "http://reach-40.herokuapp.com/high_score") {
+                    var request = URLRequest(url: url)
+                    request.httpMethod = "POST"
+                    request.httpBody = "name=\(username[0])&score=\(high_score!)".data(using: String.Encoding.utf8)
+                    
+                    let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
                         if error != nil {
                             DispatchQueue.main.sync {
                                 self.output.text = "Can't submit. Please check your internet connection."
@@ -34,6 +38,7 @@ class SubmitScoreViewController: UIViewController, UITextFieldDelegate {
                         }
                         else {
                             if let res = data {
+                                print(res)
                                 do {
                                     let jsonResponse = try JSONSerialization.jsonObject(with: res, options: JSONSerialization.ReadingOptions.mutableContainers) as AnyObject
                                     
@@ -53,7 +58,7 @@ class SubmitScoreViewController: UIViewController, UITextFieldDelegate {
                                 }
                             }
                         }
-                    })
+                    }
                     task.resume()
                 }
                 else {
